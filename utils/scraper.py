@@ -35,7 +35,9 @@ class Scraper:
         }
         
         try:
-            response = self.session.get(url, headers=headers, timeout=timeout)
+            # Use certifi for SSL verification in production
+            import certifi
+            response = self.session.get(url, headers=headers, timeout=timeout, verify=certifi.where())
             response.raise_for_status()
             return response.text
         except requests.RequestException as e:

@@ -160,7 +160,7 @@
         <header>
             <h1>🦝 Web Scraper API</h1>
             <p class="tagline">Turn any website into structured JSON data in seconds</p>
-            <a href="https://github.com/CyberRaccoonTeam/web-scraper-api" class="cta-btn">Get Started Free</a>
+            <a href="#pricing" class="cta-btn">Get Started Free</a>
         </header>
         
         <section>
@@ -181,7 +181,7 @@ POST /api/scrape
         "title": "Products",
         "items": [...]
     },
-    "scraped_at": "2026-03-13T00:00:00Z"
+    "scraped_at": "2026-03-15T00:00:00Z"
 }</pre>
             </div>
         </section>
@@ -208,7 +208,7 @@ POST /api/scrape
             </div>
         </section>
         
-        <section>
+        <section id="pricing">
             <h2>Pricing</h2>
             <div class="pricing">
                 <div class="price-card">
@@ -239,6 +239,27 @@ POST /api/scrape
                     </ul>
                 </div>
             </div>
+        </section>
+        
+        <section>
+            <h2>Documentation</h2>
+            <div class="code-block">
+<pre># Get your API key
+curl -X POST https://api.cyberraccoonteam.com/api/keys
+
+# Scrape a website
+curl -X POST https://api.cyberraccoonteam.com/api/scrape \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: YOUR_KEY" \
+  -d '{"url": "https://example.com"}'
+
+# Check usage
+curl https://api.cyberraccoonteam.com/api/usage \
+  -H "X-API-Key: YOUR_KEY"</pre>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                Full docs: <a href="https://github.com/CyberRaccoonTeam/web-scraper-api" style="color: var(--accent);">GitHub</a>
+            </p>
         </section>
         
         <footer>
