@@ -12,7 +12,9 @@ load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+    if not app.config['SECRET_KEY']:
+        raise RuntimeError("SECRET_KEY environment variable is required")
     app.config['DATABASE'] = os.path.join(os.path.dirname(__file__), 'scraper.db')
     
     # Rate limiting
